@@ -1,0 +1,297 @@
+{
+  "active": false,
+  "connections": {
+    "RSS Read": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "FireCrawl",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FireCrawl": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Markdown": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "RSS Read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-17T00:55:28.310Z",
+  "id": "tWpNOQ62SnbtfnuI",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 3",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://hnrss.org/newest?points=10",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.1,
+      "position": [
+        160,
+        0
+      ],
+      "id": "ecfe4db1-d456-479c-a2a7-058803b1b3dc",
+      "name": "RSS Read"
+    },
+    {
+      "parameters": {
+        "resource": "Default",
+        "operation": "Scrape A Url And Get Its Content",
+        "url": "={{ $json.link }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-firecrawl.fireCrawl",
+      "typeVersion": 1,
+      "position": [
+        600,
+        0
+      ],
+      "id": "cbca613d-bfb1-40d2-a5b8-d3a7dc999d20",
+      "name": "FireCrawl",
+      "credentials": {
+        "fireCrawlApi": {
+          "id": "U0iJWecf6gULZQbT",
+          "name": "FireCrawl account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "maxItems": 5
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        380,
+        0
+      ],
+      "id": "930e6811-c590-46f2-9e5e-fced32bacae1",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.data }}",
+        "options": {
+          "systemMessage": "你是一个新闻助手，我需要你把从网站上爬取到的数据，整理成一个新闻简报"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        820,
+        0
+      ],
+      "id": "12655496-1157-4dc7-803d-3203a511eaed",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        860,
+        220
+      ],
+      "id": "bf0bc27e-3cd5-4df0-bcc7-63226504b0bb",
+      "name": "DeepSeek Chat Model",
+      "credentials": {
+        "deepSeekApi": {
+          "id": "XwpZdw3hM7KWvR6c",
+          "name": "DeepSeek account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "output"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        0
+      ],
+      "id": "41a88166-6113-44e4-a2d0-5338b33e7a2b",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "mode": "markdownToHtml",
+        "markdown": "={{ $json.output.join('\\n\\n') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.markdown",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        0
+      ],
+      "id": "5a2ac4f8-f8b8-4307-9f91-f22ea64f3151",
+      "name": "Markdown"
+    },
+    {
+      "parameters": {
+        "fromEmail": "sanyuanya@qq.com",
+        "toEmail": "hjnikezhenchou@outlook.com",
+        "subject": "新闻简报",
+        "html": "={{ $json.data }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        1620,
+        0
+      ],
+      "id": "06eff695-a15d-483e-8eb6-3da705686034",
+      "name": "Send Email",
+      "webhookId": "9bfb85a1-bc4d-413d-99e5-67a170060ba5",
+      "credentials": {
+        "smtp": {
+          "id": "f4XELnCP3faGjJXX",
+          "name": "SMTP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 4
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -100,
+        0
+      ],
+      "id": "3d34832e-4773-4e36-9daa-a06aa08ecfc7",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {
+    "AI Agent": [
+      {
+        "json": {
+          "output": "### 新闻简报：特朗普移动T1手机引发质疑  \n\n**标题**：特朗普移动T1手机：外观不佳且真实性存疑  \n**来源**：The Verge  \n**发布时间**：2025年6月16日  \n**作者**：David Pierce  \n\n#### 主要内容：  \n1. **产品概述**：  \n   - 特朗普移动推出的T1手机（金色版）售价499美元，号称配置扎实，但实际存在的可能性极低。  \n   - 宣传称该手机为“美国制造”，价格低廉，预计2025年秋季上市。  \n\n2. **质疑点**：  \n   - 作者对产品的真实性表示怀疑，认为其宣传内容（如低价、美国制造）与行业现实不符。  \n   - 目前尚无可靠证据证明该手机已进入量产阶段。  \n\n3. **市场反应**：  \n   - 该消息引发科技圈讨论，部分观点认为这可能是营销噱头或未成熟项目。  \n\n**原文链接**：[点击查看](https://www.theverge.com/gadgets/687492/trump-mobile-phone-t1)  \n\n---  \n简报说明：此报道基于The Verge的科技分析，建议进一步追踪官方消息以核实产品进展。"
+        }
+      },
+      {
+        "json": {
+          "output": "### 新闻简报：《1984》的当代启示：权力如何制造真相  \n\n**来源**：Open Culture  \n**发布时间**：2025年6月  \n**作者**：Colin Marshall  \n\n#### 核心内容  \n1. **现象回顾**：  \n   - 在唐纳德·特朗普首次当选美国总统后，乔治·奥威尔的经典反乌托邦小说《1984》再度成为畅销书。  \n   - 这一现象反映了公众对权力操纵信息、扭曲真相的普遍担忧。  \n\n2. **主题分析**：  \n   - 文章探讨了《1984》中“权力制造真相”的核心命题，分析了极权主义如何通过语言（如“新话”）、宣传和监控手段控制思想。  \n   - 书中“双重思想”（Doublethink）和“真理部”等概念被重新审视，以映射当代政治与媒体生态。  \n\n3. **当代关联**：  \n   - 作者指出，当前信息泛滥与“后真相”政治环境下，奥威尔的预言显得尤为尖锐。  \n   - 社交媒体算法、假新闻和权力话语的垄断被类比为小说中的“老大哥”机制。  \n\n4. **延伸讨论**：  \n   - 文章附有相关文化资源链接（如原著解析视频），鼓励读者深入思考权力与真相的关系。  \n\n**关键引用**：  \n> “奥威尔的《1984》不仅是一部小说，更是一面镜子，迫使每个时代反思权力的本质。”  \n\n**阅读时间**：约3分钟  \n\n**新闻价值**：  \n- **时效性**：结合2025年政治语境重新解读经典。  \n- **公共性**：触及言论自由、媒体可信度等全球性议题。  \n- **警示性**：提醒公众警惕权力对真相的系统性扭曲。  \n\n**数据备注**：  \n- 原始数据通过爬取Open Culture网站获取，经清洗后提取核心信息。  \n- 配图为《1984》相关分析截图（分辨率1024×577）。  \n\n如需进一步分析或补充其他角度（如比较其他反乌托邦作品），可提供更多指令。"
+        }
+      },
+      {
+        "json": {
+          "output": "**新闻简报：研究发现特定地区更易滋生\"黑暗人格\"**\n\n**标题**：心理变态等黑暗人格特质在某些地区更为普遍\n\n**来源**：Newsweek（新闻周刊）\n**发布时间**：2025年6月16日\n\n**核心发现**：\n1. 最新研究表明，自恋、心理变态和恶意等人格特质（统称为\"黑暗三联征\"）在某些特定地理区域更为常见\n2. 这些黑暗人格特质与社会不平等、贫困和腐败等社会问题存在关联\n\n**研究重点**：\n- 研究人员发现这些负面人格特征的分布具有地域性差异\n- 研究涉及对\"黑暗三联征\"（自恋、心理变态和恶意）的深入分析\n\n**潜在影响**：\n该研究可能有助于理解不同地区社会问题的心理学根源，为制定针对性干预措施提供依据\n\n**相关标签**：心理学、人格研究、社会不平等、黑暗三联征\n\n**备注**：研究具体方法和地域数据需查阅完整报告获取\n\n（简报基于Newsweek网站元数据整理，完整研究细节请参考原始报道）"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-06-18T01:28:02.000Z",
+  "versionId": "299c1c68-d6ba-4476-953f-e1d406e3b101"
+}
