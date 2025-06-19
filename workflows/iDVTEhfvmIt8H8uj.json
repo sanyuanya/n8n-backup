@@ -1,0 +1,198 @@
+{
+  "active": false,
+  "connections": {
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Backup to Google Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parameters": {
+      "main": [
+        [
+          {
+            "node": "Get all n8n Workflows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all n8n Workflows": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-19T05:32:20.388Z",
+  "id": "iDVTEhfvmIt8H8uj",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "google drive backup",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1b65def6-4984-497d-a4bc-232af22927ad",
+              "name": "directory",
+              "type": "string",
+              "value": "https://drive.google.com/drive/folders/1IDuvv0vvWfFjG-FHFnYFp7Oo0Fti0C4y?usp=sharing"
+            },
+            {
+              "id": "c8c98f88-9f22-4574-88b8-1db99f6e4ec4",
+              "name": "parentdrive",
+              "type": "string",
+              "value": "https://drive.google.com/drive/my-drive"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0477d492-fb31-40d4-a2d0-bde3c6413e8b",
+      "name": "Parameters",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        220,
+        160
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 1,
+              "triggerAtMinute": 30
+            }
+          ]
+        }
+      },
+      "id": "56215d61-c052-4634-aa31-41e0b0290f02",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [
+        40,
+        160
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "content": "## Simplest n8n Workflow Backup – Automating Your Data Security in Google Drive",
+        "height": 140,
+        "width": 560,
+        "color": 3
+      },
+      "id": "7c79ad14-4d2a-43e2-87f6-4d7826f8874f",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        20,
+        -100
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "jsCode": "return items.map(item => {\n  const jsonData = JSON.stringify(item.json);\n  const binaryData = Buffer.from(jsonData).toString('base64');\n  item.binary = {\n    data: {\n      data: binaryData,\n      mimeType: 'application/json',\n      fileName: 'data.json'\n    }\n  };\n  return item;\n});"
+      },
+      "id": "8596ffbf-79e3-4ceb-9361-97d00e6ac0a5",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        580,
+        160
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "filters": {},
+        "requestOptions": {}
+      },
+      "id": "0f6b2c1f-5a77-4794-8f3d-ef5b424d1f7d",
+      "name": "Get all n8n Workflows",
+      "type": "n8n-nodes-base.n8n",
+      "position": [
+        400,
+        160
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "n8nApi": {
+          "id": "XKGRIkY610eBycf6",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "={{  $json.name+ \".json\"}}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive",
+          "cachedResultUrl": "https://drive.google.com/drive/my-drive",
+          "cachedResultName": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "url",
+          "value": "={{ $('Parameters').item.json.directory }}"
+        },
+        "options": {}
+      },
+      "id": "54c738d3-8b47-48b5-b38f-585e4f80c22c",
+      "name": "Backup to Google Drive",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        760,
+        160
+      ],
+      "retryOnFail": true,
+      "typeVersion": 3,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "9vrdJsSIgrWrnYZN",
+          "name": "Google Drive account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-06-19T05:32:42.000Z",
+  "versionId": "4edd4b55-d424-47ee-bef1-7b78481d0100"
+}
