@@ -1,0 +1,554 @@
+{
+  "active": false,
+  "connections": {
+    "HTML 生成": {
+      "main": [
+        [
+          {
+            "node": "设置参数-提取 HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "子工作流触发": {
+      "main": [
+        [
+          {
+            "node": "设置参数-子工作流",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "可视化提交": {
+      "main": [
+        [
+          {
+            "node": "设置参数-表格",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "发布": {
+      "main": [
+        [
+          {
+            "node": "判断",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "设置参数-提取 HTML": {
+      "main": [
+        [
+          {
+            "node": "发布",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "设置参数-表格": {
+      "main": [
+        [
+          {
+            "node": "聚合分支",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "设置参数-子工作流": {
+      "main": [
+        [
+          {
+            "node": "聚合分支",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "返回结果": {
+      "main": [
+        [
+          {
+            "node": "设置参数-网址",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "判断": {
+      "main": [
+        [
+          {
+            "node": "返回结果",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "设置参数-网址",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "设置参数-综合": {
+      "main": [
+        [
+          {
+            "node": "信息提取",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "聚合分支": {
+      "main": [
+        [
+          {
+            "node": "设置参数-综合",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "信息提取",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "信息提取": {
+      "main": [
+        [
+          {
+            "node": "HTML 生成",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "HTML 生成",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-16T07:09:37.587Z",
+  "id": "XyMMoBzaTDbF9OUp",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=请根据以下分析报告内容进行可视化设计：\n<seo_report>\n{{ $json.output }}\n</seo_report>",
+        "options": {
+          "systemMessage": "=# 角色：网页设计师和前端开发专家\n你是一名专业的网页设计师和前端开发专家，对现代 Web 设计趋势和最佳实践有深入理解，尤其擅长创造具有极高审美价值的分析洞察和数据驱动的报告可视化网页。你的设计作品不仅功能完备，而且视觉表现令人惊艳，能够直观清晰地展现复杂分析内容，给用户带来强烈的\"Aha-moment\"体验。\n\n## 任务：\n请根据稍后提供的内容，设计一个美观、现代、易读、专业的分析报告\"中文\"可视化网页。请充分发挥你的专业判断，选择最能体现报告分析与洞察精髓的设计风格、配色方案、排版和布局。网页应按照报告的各个部分依次呈现，确保内容逻辑清晰，层次分明，让用户能够按照自然阅读顺序轻松理解报告中的每个章节和要点。\n\n## **设计目标：**\n* 视觉与可读性：创造视觉上令人印象深刻且文本清晰易读的网页，能够立即吸引用户注意力并提供舒适的阅读体验，激发用户深入了解报告中的分析结果和洞察。\n* 信息传达： 一种既美观又高效的方式呈现报告各个维度的深入分析。\n* 用户感知: 通过设计传递清晰性、可信度、专业性的数据与分析，帮助用户快速把握报告内容， 并基于报告进一步提升。\n\n## **设计指导：**\n* 整体风格： 采用Bento Grid 风格的视觉设计，或者其他你认为合适的现代 Web 设计风格。目标是创造一个既有丰富信息量，又能清晰展示报告数据和洞察的页面，就像一份精心设计的交互式商业智能报告。\n* Hero 模块： 设计一个引人注目的 Hero 模块。它可以包含报告标题、作者、摘要，以及一张高质量的背景图片或插图。\n* 排版：\n    * 精心选择字体组合（衬线和无衬线），以提升中文阅读体验。\n    * 强调超大字体或数字突出核心要点，画面中可以有超大视觉元素强调重点，与小元素的比例形成反差。\n    * 可以考虑使用一些精致的排版细节（如首字下沉、悬挂标点）来提升整体质感。\n    * Font-Awesome中有很多图标，选合适的点缀增加趣味性和信息指引性。\n* 页面宽度：\n    * 桌面端最大宽度控制在1200px，确保在大屏幕上有良好的阅读体验。\n    * 移动端采用全宽设计，但保持适当的左右边距（16x）。\n    * 确保关键内容在不同设备上都能保持良好的可读性和视觉平衡。\n* 配色方案：\n    * 选择一套低饱和度、高质感的配色方案，以传递专业、可信的视觉氛围。 \n    * 考虑使用高对比度的颜色组合来突出重要元素。\n    * 全站任何按钮、文字等元素保证其背景的对比度 ≥ 4.5 : 1（符合 WCAG AA 级对比度），禁止任何 opacity/filter/同色阴影，以保证文字清晰易读。\n* 布局：\n    * 使用基于网格的布局系统来组织页面元素。\n    * 充分利用负空间（留白），创造视觉平衡和呼吸感。\n    * 可以考虑使用卡片、分割线、图标等视觉元素来分隔和组织内容。\n    * 布局需要视觉对称\n* 调性：整体风格精致, 营造一种高级感、专业感和可信赖感。\n* 数据可视化：\n    * 设计一个或多个数据可视化元素，展示关键概念、关键词和它们之间的关系。\n    * 确保可视化设计既美观又有洞察性，帮助用户更直观地理解整体框架。\n    * 可以考虑使用层级与关系类、聚类与主题分析、分布与对比类、时间与趋势类等合适的展示方式。\n    * 注意专业术语或专有名词可保留英文原文并在其后的括号中提供准确的中文翻译，确保术语表达既专业又易于理解。\n    * 禁止使用Mermaid生成交互式图表。\n\n## **技术规范：**\n*   实现完整的响应式，必须在所有设备上（手机、平板、桌面）完美展示。\n*   使用 HTML5、Font Awesome、Tailwind CSS 和必要的 JavaScript。\n*   Font Awesome: [https://lf6-cdn-tos.bytecdntp.com/cdn/expire-100-M/font-awesome/6.0.0/css/all.min.css](https://lf6-cdn-tos.bytecdntp.com/cdn/expire-100-M/font-awesome/6.0.0/css/all.min.css)\n*   Tailwind CSS: [https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tailwindcss/2.2.19/tailwind.min.css](https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tailwindcss/2.2.19/tailwind.min.css)\n*   非中文字体: [https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap](https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap)\n*   `font-family: Tahoma,Arial,Roboto,\"Droid Sans\",\"Helvetica Neue\",\"Droid Sans Fallback\",\"Heiti SC\",\"Hiragino Sans GB\",Simsun,sans-self;`\n*   https://res.cloudinary.com/dfnemmxpv/image/upload/v1747437808/aximora-logo_aximora-logo_zgnsun.png\n*   禁止引用任何外链图片，改用 FontAwesome 图标或纯CSS绘制图片占位。  \n\n## **额外加分项：**\n* 微交互： 添加微妙而有意义的微交互效果来提升用户体验（例如，按钮悬停效果、卡片悬停效果、页面滚动效果）。\n* 本报告由 AXIMORA 实验室出品，聚焦人工智能原生时代的企业级认知系统演进，深入剖析私域向量数据库的技术演化、应用场景与产业趋势！欢迎访问Aximora https://https://aximora-labs.zeabur.app/ 专注于 AI 原生基础设施与语义系统研究的技术实验室。\n* 网页页脚：\n    © AXIMORA 聚焦向量数据库、RAG 系统与智能体架构的深度研发，构建下一代 AI 语义中台！\n    图表可链接Aximora作者的 Youtube 频道地址：https://www.youtube.com/@\n    图表可链接Aximora作者的 Twitter 频道地址：https://x.com/sharp_lee207\n* {{ $('设置参数-综合').item.json['完整 SEO 报告网址'] }}\n\n## **输出要求：**\n* 确保代码符合 W3C 标准，没有错误或警告。\n* 提供一个完整、可运行的单一 HTML 文件，其中包含所有必要的 CSS 和 JavaScript，并输出在单个XML标签内：`<visual_report>...</visual_report>`"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        1080,
+        80
+      ],
+      "id": "e2ef1adf-41e8-44f3-8c4e-07838b4a6110",
+      "name": "HTML 生成",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://mcp-on-edge.edgeone.site/mcp-server",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"deploy-html\",          \n    \"arguments\": {                  \n      \"value\": \"{{ JSON.stringify($node['设置参数-提取 HTML'].json.HTML).slice(1, -1) }}\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1680,
+        80
+      ],
+      "id": "5e6112ff-897f-4faa-b1fa-1187a3d8770e",
+      "name": "发布"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "可视化内容"
+            },
+            {
+              "name": "完整 SEO 报告网址"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -180,
+        180
+      ],
+      "id": "2cfe5933-303c-4c77-a664-6480b423624b",
+      "name": "子工作流触发"
+    },
+    {
+      "parameters": {
+        "formTitle": "Aximora Labs 报告可视化生成器",
+        "formDescription": "看得见的报告，看得透的洞察。",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "可视化内容",
+              "fieldType": "textarea"
+            }
+          ]
+        },
+        "options": {
+          "appendAttribution": false,
+          "buttonLabel": "开始生成",
+          "path": "report-visualization"
+        }
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        -180,
+        -20
+      ],
+      "id": "08b8c50d-c799-4637-b439-7f0865fa12c3",
+      "name": "可视化提交",
+      "webhookId": "a599d6e6-a97f-41b0-9813-fc7479423c55",
+      "notesInFlow": false
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d00c4264-c040-4121-aa78-182d560917c2",
+              "name": "可视化网址",
+              "value": "={{ $('发布').item.json.result.content[0].text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2340,
+        80
+      ],
+      "id": "7a62fb28-ecb8-4707-a56c-bfc5ae0e8adf",
+      "name": "设置参数-网址"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "754986c8-6327-4738-a5e8-d7889b5cc31b",
+              "name": "HTML",
+              "value": "={{ $json.output.replace(/[\\s\\S]*<visual_report>/, '').replace(/<\\/visual_report>[\\s\\S]*/, '') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1460,
+        80
+      ],
+      "id": "81b674e7-4ee8-449c-8f9d-da59d0e3c659",
+      "name": "设置参数-提取 HTML"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b1e0f7aa-ef03-4ed9-bc4a-8a0996fc1fa7",
+              "name": "可视化内容",
+              "value": "={{ $json['可视化内容'] }}",
+              "type": "string"
+            },
+            {
+              "id": "cf2fb540-4e60-4cd0-8074-baf6888dec8f",
+              "name": "分支",
+              "value": "表格",
+              "type": "string"
+            },
+            {
+              "id": "4ba0c054-b767-4671-98cf-a9024574041d",
+              "name": "完整 SEO 报告网址",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        40,
+        -20
+      ],
+      "id": "9ab7acec-0d93-4f69-bb32-9d6eca170709",
+      "name": "设置参数-表格"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b1e0f7aa-ef03-4ed9-bc4a-8a0996fc1fa7",
+              "name": "可视化内容",
+              "value": "={{ $json['可视化内容'] }}",
+              "type": "string"
+            },
+            {
+              "id": "4c9db95a-6bf6-4610-8071-183c6a9523dd",
+              "name": "分支",
+              "value": "子工作流",
+              "type": "string"
+            },
+            {
+              "id": "285df712-9063-4f6b-b57d-1a1b7dbbf3cf",
+              "name": "完整 SEO 报告网址",
+              "value": "=完整 SEO 报告链接：\n{{ $json['完整 SEO 报告网址'] }}\n请将此链接显示在可视化网页的页眉区域，确保链接地址准确无误且可正常访问。",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        40,
+        180
+      ],
+      "id": "19c159ae-84d1-4230-97ab-9ab9443e978c",
+      "name": "设置参数-子工作流"
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "respondWith": "redirect",
+        "redirectUrl": "={{ $json.result.content[0].text }}",
+        "limitWaitTime": true,
+        "resumeAmount": 0.5,
+        "resumeUnit": "minutes"
+      },
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 1,
+      "position": [
+        2120,
+        20
+      ],
+      "id": "1861b9a1-43f6-42fa-9af8-5c288aabf88f",
+      "name": "返回结果",
+      "webhookId": "c9cc6bfe-3651-4c85-93d7-4e51ebc8cc10"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "fb5ceb74-29fe-4d58-ace9-647a117193ee",
+              "leftValue": "={{ $('设置参数-综合').first().json['分支'] }}",
+              "rightValue": "表格",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1900,
+        80
+      ],
+      "id": "4a8d27aa-a8ec-4659-8b0c-7a395e1bf620",
+      "name": "判断"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "06faa3b6-ea89-49a8-b250-3ea70d603bf6",
+              "name": "=可视化",
+              "value": "={{ $json['可视化内容'] }}",
+              "type": "string"
+            },
+            {
+              "id": "9585aca0-55e4-41cd-ab8d-3fca7c17eb8e",
+              "name": "分支",
+              "value": "={{ $json['分支'] }}",
+              "type": "string"
+            },
+            {
+              "id": "41fe9949-af09-4e64-b642-fd4fc8b3f0c1",
+              "name": "完整 SEO 报告网址",
+              "value": "={{ $json['完整 SEO 报告网址'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        480,
+        80
+      ],
+      "id": "4c0e099a-3dd3-429b-ba97-abf625728863",
+      "name": "设置参数-综合"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        260,
+        80
+      ],
+      "id": "fa123139-93fc-4320-b6c1-3b752281d77c",
+      "name": "聚合分支"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash-preview-04-17",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        800,
+        300
+      ],
+      "id": "df6c4b7c-ed9b-431a-ae46-62402452b6b0",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "VuZfWJTX7GcOP0MB",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=需要总结报告如下：\n{{ $json['可视化'] }}",
+        "options": {
+          "systemMessage": "=# 角色：长文报告信息提取与总结专家\n\n你是一位专业的信息提取和内容总结专家，具备深厚的长篇文档分析、精确语义理解和信息浓缩能力。你擅长快速解析复杂长文报告的结构、主题和关键内容，并通过系统化的分析精准捕捉核心信息，包括所有关键术语、数据和结论。你的专长还涵盖对报告内容的深度挖掘，能够发现隐藏在文本深处的关联性和隐含价值，提供深入且富有洞察力的内容解读。\n\n## 目标：\n\n你的任务是针对所提供的长篇文档报告进行系统的深入分析和精炼，撰写一份长度约3000字的高度结构化的专业总结。该总结需完整涵盖报告的所有核心观点、关键数据、术语定义和重要结论，确保在语言精炼的同时信息全面且准确保留。生成的总结不仅要精准提炼原文信息，更要体现报告的核心逻辑框架，为读者快速获取关键信息提供便利，也为后续的大模型分析和可视化提供高质量的文本基础。\n\n## 任务具体要求：\n\n1. **深入分析长篇报告：**\n\n   * 仔细阅读并快速把握报告整体结构、主要章节、核心主题和子主题。\n   * 明确识别报告的核心论点、关键数据点、图表与统计信息。\n\n2. **综合精炼与结构化提炼：**\n\n   * 提取所有关键术语、定义和核心观点，确保无遗漏地覆盖所有关键词和关键信息。\n   * 系统归纳报告中的主要发现、结论及其对应的论证过程。\n   * 提炼关键信息点，形成逻辑严谨、结构清晰、层次分明的文本架构。\n\n3. **撰写高信息密度的专业总结：**\n\n   * 将提炼的信息凝练为约3000字的中文专业总结。\n   * 明确划分内容层次，建议使用清晰的Markdown格式（包括标题、子标题、列表、加粗等）突出重点内容。\n   * 输出的语言应全部使用中文，专业术语或专有名词可保留英文原文并在其后的括号中提供准确的中文翻译，确保术语表达既专业又易于理解。\n\n4. **输出内容的质量保证：**\n   * 确保总结内容精准无误，严格基于原文内容，不得随意编造。\n   * 表达严谨、清晰、精炼，便于快速理解和后续处理。\n\n## 输出格式与内容要求：\n请以Markdown格式输出，确保总结清晰、结构化、信息丰富且精准，满足后续大模型处理和深入分析需求，直接输出完整内容，无需创作说明与结束语。"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        700,
+        80
+      ],
+      "id": "ea039fbd-3069-475f-828d-d2440726256a",
+      "name": "信息提取",
+      "retryOnFail": false,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "model": "anthropic/claude-3.7-sonnet:thinking",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        300
+      ],
+      "id": "1aec8fcf-723c-44c1-b62a-2c446f612fab",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "bP71hOKIcoU0mQnL",
+          "name": "OpenRouter account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-06-17T06:27:21.000Z",
+  "versionId": "4373e025-3d93-4db5-8f29-ba5266b96560"
+}
