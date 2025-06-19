@@ -1,0 +1,1187 @@
+{
+  "active": false,
+  "connections": {
+    "获取网址": {
+      "main": [
+        [
+          {
+            "node": "遍历-网址",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "设置参数-抓取": {
+      "main": [
+        [
+          {
+            "node": "循环",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "聚合结果": {
+      "main": [
+        [
+          {
+            "node": "设置参数-竞争者信息",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "循环": {
+      "main": [
+        [
+          {
+            "node": "聚合结果",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "爬取-HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "遍历-网址": {
+      "main": [
+        [
+          {
+            "node": "循环",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "提取-HTML": {
+      "main": [
+        [
+          {
+            "node": "设置参数-抓取",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "爬取-HTML": {
+      "main": [
+        [
+          {
+            "node": "提取-HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "竞争者分析",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "用户意图分析",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "机会识别与洞察分析",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "内容大纲生成",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "用户意图分析": {
+      "main": [
+        [
+          {
+            "node": "设置参数-用户意图分析",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "报告生成": {
+      "main": [
+        [
+          {
+            "node": "设置参数-子工作流",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "输入需求": {
+      "main": [
+        [
+          {
+            "node": "设置参数-表格",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "设置参数-综合": {
+      "main": [
+        [
+          {
+            "node": "获取网址",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "设置参数-子工作流": {
+      "main": [
+        [
+          {
+            "node": "聚合分支",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "设置参数-表格": {
+      "main": [
+        [
+          {
+            "node": "聚合分支",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "返回结果": {
+      "main": [
+        [
+          {
+            "node": "聚合条目",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "设置参数-用户意图分析": {
+      "main": [
+        [
+          {
+            "node": "机会识别与洞察分析",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "设置参数-机会识别与洞察分析": {
+      "main": [
+        [
+          {
+            "node": "内容大纲生成",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "内容大纲生成": {
+      "main": [
+        [
+          {
+            "node": "设置参数-内容大纲",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "设置参数-竞争者分析": {
+      "main": [
+        [
+          {
+            "node": "用户意图分析",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "竞争者分析": {
+      "main": [
+        [
+          {
+            "node": "设置参数-竞争者分析",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "设置参数-竞争者信息": {
+      "main": [
+        [
+          {
+            "node": "竞争者分析",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "设置参数-内容大纲": {
+      "main": [
+        [
+          {
+            "node": "设置参数-组合",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "机会识别与洞察分析": {
+      "main": [
+        [
+          {
+            "node": "设置参数-机会识别与洞察分析",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "聚合分支": {
+      "main": [
+        [
+          {
+            "node": "设置参数-综合",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "聚合条目": {
+      "main": [
+        [
+          {
+            "node": "设置参数-汇总",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "判断": {
+      "main": [
+        [
+          {
+            "node": "返回结果",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "聚合条目",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "发布": {
+      "main": [
+        [
+          {
+            "node": "判断",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "转化为 HTML": {
+      "main": [
+        [
+          {
+            "node": "发布",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "设置参数-组合": {
+      "main": [
+        [
+          {
+            "node": "转化为 HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-06-16T07:10:52.115Z",
+  "id": "8ecgg03nhIs8bUpO",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://api.302.ai/searchapi/search",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "api_key",
+              "value": "={{ $json['302ai api key'] }}"
+            },
+            {
+              "name": "engine",
+              "value": "google"
+            },
+            {
+              "name": "q",
+              "value": "={{ $json['主关键词'] }}"
+            },
+            {
+              "name": "num",
+              "value": "30"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1100,
+        360
+      ],
+      "id": "7df5347d-13ad-43b3-a36f-5b84cdaa8c03",
+      "name": "获取网址"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "186daf52-90b2-4608-9c94-243187069bf4",
+              "name": "Competitor URL",
+              "type": "string",
+              "value": "={{ $('循环').item.json.link }}"
+            },
+            {
+              "id": "3bb3057c-d84f-4eac-8da2-22740a2c293c",
+              "name": "Outline",
+              "type": "string",
+              "value": "={{ JSON.stringify($json.outline) }}"
+            },
+            {
+              "id": "53c1b42c-14ce-48a0-8802-5b175d7ab127",
+              "name": "Meta",
+              "type": "string",
+              "value": "={{ JSON.stringify($json.meta) }}"
+            },
+            {
+              "id": "ca84a96b-f370-42b6-9f4d-a1e4d1ab066a",
+              "name": "Ngrams",
+              "type": "string",
+              "value": "={{ JSON.stringify($json.ngrams) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "92c5491b-a617-48a7-a88c-2c444a7c7b95",
+      "name": "设置参数-抓取",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        80,
+        440
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "jsCode": "let output = '';\n\nfor (const [index, item] of items.entries()) {\n  const data = item.json;\n\n  const formatField = (value) => {\n    if (typeof value === 'string') {\n      try {\n        const parsed = JSON.parse(value);\n        return JSON.stringify(parsed, null, 2); // Pretty print with 2-space indent\n      } catch {\n        return value; // Not JSON, return as-is\n      }\n    }\n    return value;\n  };\n\n  output += `<competitor${index + 1}>\\n`;\n  output += `  <competitor url>\\n    ${data[\"Competitor URL\"]}\\n  </competitor url>\\n\\n`;\n  output += `  <outline>\\n    ${formatField(data[\"Outline\"])}\\n  </outline>\\n\\n`;\n  output += `  <meta>\\n${formatField(data[\"Meta\"])}\\n  </meta>\\n\\n`;\n  output += `  <ngrams>\\n${formatField(data[\"Ngrams\"])}\\n  </ngrams>\\n`;\n  output += `</competitor${index + 1}>\\n\\n`;\n}\n\nreturn [\n  {\n    json: {\n      competitors_data: output.trim()\n    }\n  }\n];"
+      },
+      "id": "7791af98-3787-4329-9f2d-929ddd8ebbf6",
+      "name": "聚合结果",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        -440,
+        100
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -660,
+        360
+      ],
+      "id": "9d48005b-f0a0-4105-89b4-e218d9eda581",
+      "name": "循环"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "organic_results",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -880,
+        360
+      ],
+      "id": "af704afb-87e8-4e6a-9f1a-c38072cc9261",
+      "name": "遍历-网址"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Function to remove inner HTML tags and decode common HTML entities\nfunction cleanText(text) {\n  // Remove any HTML tags inside the text\n  let cleaned = text.replace(/<\\/?[^>]+(>|$)/g, '');\n\n  // Decode common HTML entities\n  cleaned = cleaned\n    .replace(/&nbsp;/g, ' ')  // Non-breaking space\n    .replace(/&amp;/g, '&')   // Ampersand\n    .replace(/&quot;/g, '\"')  // Double quote\n    .replace(/&lt;/g, '<')    // Less-than\n    .replace(/&gt;/g, '>')    // Greater-than\n    .replace(/&#8217;/g, \"'\")  // Right single quotation mark\n    .replace(/&#8220;/g, '\"')  // Left double quotation mark\n    .replace(/&#8221;/g, '\"')  // Right double quotation mark\n    .replace(/&rsquo;/g, \"'\")  // Right single quotation mark\n    .replace(/&lsquo;/g, \"'\")  // Left single quotation mark\n    .replace(/&rdquo;/g, '\"')  // Right double quotation mark\n    .replace(/&ldquo;/g, '\"')  // Left double quotation mark\n    .replace(/&mdash;/g, '—')  // Em dash\n    .replace(/&ndash;/g, '–')  // En dash\n    .replace(/&hellip;/g, '…') // Ellipsis\n    .replace(/&#(\\d+);/g, (match, dec) => String.fromCharCode(dec)); // Handle numeric entities\n\n  return cleaned.trim();  // Remove extra whitespace\n}\n\n// Function to generate n-grams from text\nfunction generateNgrams(text, n) {\n  // Convert text to lowercase and split into words\n  const words = text.toLowerCase()\n    .replace(/[^\\w\\s]|_/g, ' ')  // Replace punctuation and underscores with spaces\n    .replace(/\\s+/g, ' ')        // Replace multiple spaces with a single space\n    .trim()                       // Remove leading/trailing spaces\n    .split(' ');                  // Split into words\n  \n  // Filter out stop words and very short words (optional)\n  const filteredWords = words.filter(word => word.length > 1);\n  \n  // Generate n-grams\n  const ngrams = [];\n  for (let i = 0; i <= filteredWords.length - n; i++) {\n    ngrams.push(filteredWords.slice(i, i + n).join(' '));\n  }\n  \n  return ngrams;\n}\n\n// Function to count n-grams\nfunction countNgrams(textArray, n) {\n  const ngramCounts = {};\n  \n  textArray.forEach(text => {\n    const ngrams = generateNgrams(text, n);\n    \n    ngrams.forEach(ngram => {\n      ngramCounts[ngram] = (ngramCounts[ngram] || 0) + 1;\n    });\n  });\n  \n  // Convert to array of objects and sort by count (descending)\n  return Object.entries(ngramCounts)\n    .map(([phrase, count]) => ({ phrase, count }))\n    .sort((a, b) => b.count - a.count);\n}\n\n// Initialize an array to store the results for each item\nlet results = [];\n\n// Iterate through all items (each item corresponds to one URL in the loop)\nitems.forEach(item => {\n  // Get the raw HTML content for the current item\n  const html = item.json.data || '';  // Ensure you're getting the correct field where HTML is stored\n\n  // Initialize arrays to store the extracted outline\n  let outline = [];\n  let meta = {};\n  let schemas = [];\n  let headingTexts = []; // Store all heading texts for n-gram analysis\n\n  // Store all headings with their positions to maintain original order\n  let headingsWithPositions = [];\n  \n  // Extract heading content with a more robust approach\n  for (let i = 1; i <= 6; i++) {\n    // This regex pattern matches h1-h6 tags, capturing everything between opening and closing tags\n    // even if there are nested elements\n    const pattern = new RegExp(`<h${i}[^>]*>((?:.|\\n)*?)<\\/h${i}>`, 'gi');\n    let match;\n    \n    while ((match = pattern.exec(html)) !== null) {\n      const fullContent = match[1];\n      const cleanedText = cleanText(fullContent);\n      \n      // Only add non-empty headings\n      if (cleanedText && cleanedText.trim().length > 0) {\n        headingsWithPositions.push({\n          position: match.index,\n          level: i,\n          tag: `h${i}`,\n          text: cleanedText\n        });\n        \n        // Add to headingTexts for n-gram analysis\n        headingTexts.push(cleanedText);\n      }\n    }\n  }\n  \n  // Sort headings by their position in the HTML to maintain the original order\n  headingsWithPositions.sort((a, b) => a.position - b.position);\n  \n  // Process the sorted headings\n  headingsWithPositions.forEach(heading => {\n    // Build the outline based on the heading level with dot-based indentation\n    const indentation = '.'.repeat(heading.level - 1);  // No dots for H1, one for H2, etc.\n    outline.push(`${indentation}${heading.tag.toUpperCase()}: ${heading.text}`);\n  });\n\n  // Generate n-grams (2-gram, 3-gram, and 4-gram) from all headings\n  const ngrams = {\n    '2gram': countNgrams(headingTexts, 2),\n    '3gram': countNgrams(headingTexts, 3),\n    '4gram': countNgrams(headingTexts, 4)\n  };\n  \n  // Filter out n-grams with only one occurrence (optional)\n  // This can be adjusted based on preference\n  const filteredNgrams = {\n    '2gram': ngrams['2gram'].filter(item => item.count > 1),\n    '3gram': ngrams['3gram'].filter(item => item.count > 1),\n    '4gram': ngrams['4gram'].filter(item => item.count > 1)\n  };\n\n  // Extract title tag\n  const titleMatch = html.match(/<title>(.*?)<\\/title>/i);\n  if (titleMatch && titleMatch[1]) {\n    meta.title = cleanText(titleMatch[1]);\n  }\n\n  // Extract meta tags\n  const metaTags = [\n    { name: 'description', regex: /<meta\\s+name=\"description\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'canonical', regex: /<link\\s+rel=\"canonical\"\\s+href=\"([^\"]*)\"[^>]*>/i },\n    { name: 'og:locale', regex: /<meta\\s+property=\"og:locale\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'og:type', regex: /<meta\\s+property=\"og:type\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'og:title', regex: /<meta\\s+property=\"og:title\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'og:description', regex: /<meta\\s+property=\"og:description\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'og:url', regex: /<meta\\s+property=\"og:url\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'og:site_name', regex: /<meta\\s+property=\"og:site_name\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'article:publisher', regex: /<meta\\s+property=\"article:publisher\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'article:modified_time', regex: /<meta\\s+property=\"article:modified_time\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'og:image', regex: /<meta\\s+property=\"og:image\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'og:image:width', regex: /<meta\\s+property=\"og:image:width\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'og:image:height', regex: /<meta\\s+property=\"og:image:height\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'og:image:type', regex: /<meta\\s+property=\"og:image:type\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'twitter:card', regex: /<meta\\s+name=\"twitter:card\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'twitter:title', regex: /<meta\\s+name=\"twitter:title\"\\s+content=\"([^\"]*)\"[^>]*>/i },\n    { name: 'twitter:site', regex: /<meta\\s+name=\"twitter:site\"\\s+content=\"([^\"]*)\"[^>]*>/i }\n  ];\n\n  // Extract each meta tag\n  metaTags.forEach(tag => {\n    const match = html.match(tag.regex);\n    if (match && match[1]) {\n      meta[tag.name] = cleanText(match[1]);\n    }\n  });\n\n  // Extract all meta tags with name or property attributes (more general approach)\n  const generalMetaRegex = /<meta\\s+(?:name|property)=\"([^\"]*)\"\\s+content=\"([^\"]*)\"[^>]*>/gi;\n  let metaMatch;\n  while ((metaMatch = generalMetaRegex.exec(html)) !== null) {\n    const name = metaMatch[1];\n    const content = cleanText(metaMatch[2]);\n    \n    // Only add if not already captured and has content\n    if (content && !meta[name]) {\n      meta[name] = content;\n    }\n  }\n\n  // Extract JSON-LD schema data\n  const schemaRegex = /<script\\s+type=\"application\\/ld\\+json\"[^>]*>([\\s\\S]*?)<\\/script>/gi;\n  let schemaMatch;\n  \n  while ((schemaMatch = schemaRegex.exec(html)) !== null) {\n    try {\n      const schemaText = schemaMatch[1].trim();\n      if (schemaText) {\n        const schemaData = JSON.parse(schemaText);\n        schemas.push(schemaData);\n      }\n    } catch (e) {\n      // If JSON parsing fails, add the raw text\n      schemas.push({ raw: schemaMatch[1].trim() });\n    }\n  }\n\n  // Add the outline, meta, schema, and ngrams for the current item to the results array\n  results.push({\n    json: {\n      outline: outline,  // Array containing the hierarchy of headings with dot-based indentation\n      meta: Object.keys(meta).length > 0 ? meta : undefined,  // Only include if meta tags were found\n      schema: schemas.length > 0 ? schemas : undefined,  // Only include if schema data was found\n      ngrams: headingTexts.length > 0 ? filteredNgrams : undefined  // Only include if headings were found\n    }\n  });\n});\n\n// Return the results for all items (all URLs in the loop)\nreturn results;"
+      },
+      "id": "59171578-e62f-42c6-9d85-9cb50262d582",
+      "name": "提取-HTML",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        -220,
+        360
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "url": "=https://r.jina.ai/{{ $json.link }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "={{ $('设置参数-综合').item.json['jina api key'] }}"
+            },
+            {
+              "name": "X-Return-Format",
+              "value": "html"
+            },
+            {
+              "name": "X-No-Cache",
+              "value": "true"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9847742b-4bf3-4335-9678-fd4d502fe56d",
+      "name": "爬取-HTML",
+      "type": "n8n-nodes-base.httpRequest",
+      "maxTries": 5,
+      "position": [
+        -440,
+        360
+      ],
+      "executeOnce": false,
+      "retryOnFail": false,
+      "typeVersion": 4.2,
+      "waitBetweenTries": 5000,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash-preview-04-17",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        100,
+        220
+      ],
+      "id": "ae3ed5a8-628b-4df6-be53-3d824ee7f4db",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "VuZfWJTX7GcOP0MB",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=<目标关键词>\n{{ $('设置参数-综合').first().json['主关键词'] }}\n</目标关键词>",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=# 角色：用户体验(UX)研究和搜索意图分析专家\n你是一名资深的用户体验(UX)研究员和搜索意图分析专家，具备精准解析搜索查询背后的深层用户需求与心理期望、运用认知心理学和行为分析框架构建用户意图模型、独立于市场现有解决方案进行客观需求评估，以及将复杂的搜索行为转化为可操作的内容策略洞察等核心能力。\n\n## 任务目标：\n请提供以下数据集用于分析：\n<目标关键词>\n{目标关键词}\n</目标关键词>\n\n## 输出格式：\n使用专业、规范的中文撰写报告，确保内容层次清晰、结构严谨、逻辑分明。\n将完整报告以 markdown 格式呈现，并置于单一XML标签内：`<user_intent_report>...</user_intent_report>`\n报告标题层级从二级标题(##)开始，标题定为\"{{ $('设置参数-综合').first().json['主关键词'] }}用户意图分析\"\n\n\n## 报告结构：\n1. 主要用户意图： 用户的主要目标是什么？（信息获取型、导航型、交易型、商业调研型）。\n2. 次要意图： 用户可能有哪些相关问题或需求？\n3. 隐含用户画像： 描述可能的搜索者（例如，角色、痛点、背景、购买产品与获取服务需求）。\n4. 买家旅程阶段： （认知阶段、考虑阶段、决策阶段）。\n5. 预期服务/内容： 用户在满足其意图的页面上逻辑上期望找到哪些特定服务或信息类型？\n6. 问题/解决方案框架： 应如何阐述用户的核心问题，以及如何将服务定位为针对此特定查询的解决方案？"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.6,
+      "position": [
+        600,
+        100
+      ],
+      "id": "640c10f1-ee27-4662-8d4d-c384a6867974",
+      "name": "用户意图分析"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "主关键词"
+            },
+            {
+              "name": "公司品牌"
+            },
+            {
+              "name": "公司介绍"
+            },
+            {
+              "name": "目标用户"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1980,
+        440
+      ],
+      "id": "bf5d2d7e-0e88-48f3-aaf4-6ae115951c2b",
+      "name": "报告生成"
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "respondWith": "redirect",
+        "redirectUrl": "={{ $json.result.content[0].text }}",
+        "limitWaitTime": true,
+        "resumeAmount": 0.5,
+        "resumeUnit": "minutes"
+      },
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 1,
+      "position": [
+        3280,
+        40
+      ],
+      "id": "216aec19-8a69-4c6d-a129-44f6c05853bc",
+      "name": "返回结果",
+      "webhookId": "cdf6b9a7-17d2-4ec0-8fba-9b6b69cee3a8"
+    },
+    {
+      "parameters": {
+        "formTitle": "SEO 关键词分析引擎",
+        "formDescription": "报告生成快人一步，SEO 优化胜人一筹。",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "主关键词",
+              "placeholder": "山西闪数科技有限公司",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "公司品牌",
+              "placeholder": "山西闪数科技有限公司"
+            },
+            {
+              "fieldLabel": "公司介绍",
+              "fieldType": "textarea",
+              "placeholder": "山西闪数科技有限公司"
+            },
+            {
+              "fieldLabel": "目标用户"
+            }
+          ]
+        },
+        "options": {
+          "appendAttribution": false,
+          "buttonLabel": "撰写报告",
+          "path": "seo-report"
+        }
+      },
+      "id": "d2a8f578-84bf-4cd4-a0d3-98e8bd3fd237",
+      "name": "输入需求",
+      "type": "n8n-nodes-base.formTrigger",
+      "position": [
+        -1980,
+        240
+      ],
+      "webhookId": "dafbc2ba-7397-4f83-b84d-630294e636b0",
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d3c51b54-2bb4-449c-872f-09cea2401251",
+              "name": "主关键词",
+              "value": "={{ $json['主关键词'] }}",
+              "type": "string"
+            },
+            {
+              "id": "21405b4e-911f-4e3e-9f67-daf742668bd2",
+              "name": "公司品牌",
+              "value": "={{ $json['公司品牌'] }}",
+              "type": "string"
+            },
+            {
+              "id": "569b1c85-fee8-4fa2-80c1-bd6b44bc9fe8",
+              "name": "公司介绍",
+              "value": "={{ $json['公司介绍'] }}",
+              "type": "string"
+            },
+            {
+              "id": "03a7ca61-ccc4-46f2-b183-821aaff3e271",
+              "name": "目标用户",
+              "value": "={{ $json['目标用户'] }}",
+              "type": "string"
+            },
+            {
+              "id": "ac019d3e-8795-4b2d-940f-c34ea8f304dc",
+              "name": "302ai api key",
+              "value": "sk-hM4ae7gXG3Xvrp1d57i4OAyrDIGcP5NchPzRyyApBXgWzLrm",
+              "type": "string"
+            },
+            {
+              "id": "ab75597e-beac-46de-abe4-3d03e9cd71e1",
+              "name": "jina api key",
+              "value": "Bearer jina_c9465cd80b4649ce8e0f0e88272b9f9aNlBmWHk1YXrMQkb_UtgjWfHqUqpK",
+              "type": "string"
+            },
+            {
+              "id": "c3bbb079-21b1-4f6a-a1fa-44e9df8e09ec",
+              "name": "分支",
+              "value": "={{ $json['分支'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1320,
+        360
+      ],
+      "id": "734b83b9-d9c5-4c96-9b91-dcf2bb4940fa",
+      "name": "设置参数-综合"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d3c51b54-2bb4-449c-872f-09cea2401251",
+              "name": "主关键词",
+              "value": "={{ $json['主关键词'] }}",
+              "type": "string"
+            },
+            {
+              "id": "21405b4e-911f-4e3e-9f67-daf742668bd2",
+              "name": "公司品牌",
+              "value": "={{ $json['公司品牌'] }}",
+              "type": "string"
+            },
+            {
+              "id": "569b1c85-fee8-4fa2-80c1-bd6b44bc9fe8",
+              "name": "公司介绍",
+              "value": "={{ $json['公司介绍'] }}",
+              "type": "string"
+            },
+            {
+              "id": "03a7ca61-ccc4-46f2-b183-821aaff3e271",
+              "name": "目标用户",
+              "value": "={{ $json['目标用户'] }}",
+              "type": "string"
+            },
+            {
+              "id": "aed42790-1dc1-4284-b82c-10494a8f444f",
+              "name": "分支",
+              "value": "工作流",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1760,
+        440
+      ],
+      "id": "8d874131-d472-4737-9dcd-e0d3ac58dc5c",
+      "name": "设置参数-子工作流"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d3c51b54-2bb4-449c-872f-09cea2401251",
+              "name": "主关键词",
+              "value": "={{ $json['主关键词'] }}",
+              "type": "string"
+            },
+            {
+              "id": "21405b4e-911f-4e3e-9f67-daf742668bd2",
+              "name": "公司品牌",
+              "value": "={{ $json['公司品牌'] }}",
+              "type": "string"
+            },
+            {
+              "id": "569b1c85-fee8-4fa2-80c1-bd6b44bc9fe8",
+              "name": "公司介绍",
+              "value": "={{ $json['公司介绍'] }}",
+              "type": "string"
+            },
+            {
+              "id": "03a7ca61-ccc4-46f2-b183-821aaff3e271",
+              "name": "目标用户",
+              "value": "={{ $json['目标用户'] }}",
+              "type": "string"
+            },
+            {
+              "id": "bfbe8b6e-c79c-4383-a9a5-0d97781caee6",
+              "name": "分支",
+              "value": "表格",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1760,
+        240
+      ],
+      "id": "0430fd84-d3aa-42c1-b707-98558de8538f",
+      "name": "设置参数-表格"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4b43a329-9c70-43d3-a38d-c1edcda1a028",
+              "name": "用户意图分析",
+              "value": "={{ $json.text.replace(/[\\s\\S]*<user_intent_report>/, '').replace(/<\\/user_intent_report>[\\s\\S]*/, '') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        980,
+        100
+      ],
+      "id": "5a4c6fc9-4d38-4dbf-86da-633113bbb4eb",
+      "name": "设置参数-用户意图分析"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4b43a329-9c70-43d3-a38d-c1edcda1a028",
+              "name": "机会识别与洞察分析",
+              "value": "={{ $json.text.replace(/[\\s\\S]*<opportunity_analysis>/, '').replace(/<\\/opportunity_analysis>[\\s\\S]*/, '') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1580,
+        100
+      ],
+      "id": "67973cfa-28a5-4467-96d1-4c3e5cd34c8a",
+      "name": "设置参数-机会识别与洞察分析"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=<目标关键词>\n{{ $('设置参数-综合').first().json['主关键词'] }}\n</目标关键词>\n\n<机会识别与洞察分析>\n{{ $json['机会识别与洞察分析'] }}\n</机会识别与洞察分析>\n\n<公司品牌>\n{{ $('设置参数-综合').first().json['公司品牌'] }}\n</公司品牌>\n\n<公司介绍>\n{{ $('设置参数-综合').first().json['公司介绍'] }}\n</公司介绍>\n\n<目标用户>\n{{ $('设置参数-综合').first().json['目标用户'] }}\n</目标用户>",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=# 角色：SEO内容架构师、信息设计师和转化导向结构专家\n\n你是一名资深SEO内容架构师、信息设计专家和转化导向页面结构优化大师。\n\n## 任务目标\n\n根据提供的《机会识别与洞察分析》，为特定目标关键词设计最优的页面内容大纲，包括H1、H2、H3以及可能的H4标题。大纲需完美匹配用户搜索意图，整合竞争对手SEO最佳实践，打造逻辑清晰、用户体验流畅的结构，最终有效提高页面的访客转化率。\n\n## 信息输入\n请基于以下信息输出页面大纲：\n\n<目标关键词>\n{目标关键词}\n</目标关键词>\n\n<机会识别与洞察分析>\n{机会识别与洞察分析}\n</机会识别与洞察分析>\n\n<公司品牌>\n{公司品牌}\n</公司品牌>\n\n<公司介绍>\n{公司介绍}\n</公司介绍>\n\n<目标用户>\n{目标用户}\n</目标用户>\n\n## 输出格式要求\n以中文输出清晰易懂的页面大纲。\n页面大纲须采用以下JSON格式，其中顶层键为`content_outline`：\n{\n  \"content_outline\": {\n    \"h1\": {\n      \"title\": \"H1标题：[精准覆盖目标关键词] - 实现[用户核心利益点]\",\n      \"description\": \"（此处填写H1标题的整体描述，概括页面核心价值与用户主要关注点）\",\n      \"seo_keywords_themes\": [\"核心关键词1\", \"核心关键词2\", \"用户利益主题\"]\n    },\n    \"sections_h2\": [\n      {\n        \"title\": \"H2: 痛点洞察：您是否正面临[普遍用户痛点]？\",\n        \"description\": \"引导用户识别并共鸣其在特定场景下可能遇到的挑战或困扰。\",\n        \"seo_keywords_themes\": [\"H2痛点洞察关键词\", \"用户挑战\", \"普遍问题\"],\n        \"subsections_h3\": [\n          {\n            \"title\": \"H3: [痛点A]的具体表现与影响\",\n            \"description\": \"清晰阐述痛点，让用户意识到问题的重要性及寻求解决方案的必要性。\",\n            \"seo_keywords_themes\": [\"痛点A相关关键词\", \"行业挑战\"]\n          },\n          {\n            \"title\": \"H3: 若[痛点B]持续存在，可能导致的后果\",\n            \"description\": \"强调不解决问题的潜在负面影响，增强用户改变的紧迫感。\",\n            \"seo_keywords_themes\": [\"痛点B相关关键词\", \"潜在风险\"]\n          }\n        ]\n      },\n      {\n        \"title\": \"H2: 核心价值主张：我们如何助您[关键成果]？\",\n        \"description\": \"清晰阐述我们的核心价值定位，以及能为用户带来的根本性改变和核心益处。\",\n        \"seo_keywords_themes\": [\"H2核心价值关键词\", \"解决方案\", \"用户成果\"],\n        \"subsections_h3\": [\n          {\n            \"title\": \"H3: 我们的[独特方法/产品核心]\",\n            \"description\": \"解释我们的解决方案如何从根本上解决用户痛点，突出独特性。\",\n            \"seo_keywords_themes\": [\"核心价值主张关键词\", \"独特解决方案\"]\n          },\n          {\n            \"title\": \"H3: 您将获得的核心利益：[利益点1]、[利益点2]\",\n            \"description\": \"具体列举用户通过我们服务可直接获得的核心价值和积极改变。\",\n            \"seo_keywords_themes\": [\"用户利益点\", \"预期成果关键词\"]\n          }\n        ]\n      },\n      {\n        \"title\": \"H2: 服务/产品优势：为何选择我们？\",\n        \"description\": \"详细介绍我们的服务或产品特性，并突出相较于其他方案的独特优势和用户具体获益。\",\n        \"seo_keywords_themes\": [\"H2服务优势关键词\", \"产品特性\", \"竞争力\"],\n        \"subsections_h3\": [\n          {\n            \"title\": \"H3: 特性一：[产品/服务特性A]及其带来的[具体用户获益A]\",\n            \"description\": \"详细描述具体特性，并直接关联到用户能感知的实际好处或体验提升。\",\n            \"seo_keywords_themes\": [\"特性A关键词\", \"功能优势\", \"用户获益A\"]\n          },\n          {\n            \"title\": \"H3: 特性二：[产品/服务特性B]如何保障[具体用户获益B]\",\n            \"description\": \"阐述另一关键特性，并强调其为用户带来的独特价值或保障。\",\n            \"seo_keywords_themes\": [\"特性B关键词\", \"独特卖点\", \"用户获益B\"]\n          }\n        ]\n      },\n      {\n        \"title\": \"H2: 权威信任：我们的专业实力与客户认可\",\n        \"description\": \"通过展示专业资质、成功案例、客户评价等，建立用户对我们品牌和能力的信任。\",\n        \"seo_keywords_themes\": [\"H2权威信任关键词\", \"客户案例\", \"品牌信誉\"],\n        \"subsections_h3\": [\n          {\n            \"title\": \"H3: 客户成功案例：[客户X]如何通过我们实现[显著成果]\",\n            \"description\": \"通过真实案例展示服务的有效性和我们帮助客户成功的实力。\",\n            \"seo_keywords_themes\": [\"成功案例\", \"客户见证\", \"行业应用\"]\n          },\n          {\n            \"title\": \"H3: [资质认证/合作伙伴/媒体报道]展示\",\n            \"description\": \"借助第三方权威增强品牌可信度和专业形象。\",\n            \"seo_keywords_themes\": [\"权威认证\", \"合作伙伴\", \"品牌信誉\"]\n          }\n        ]\n      },\n      {\n        \"title\": \"H2: 疑虑解答：关于[服务/价格/流程]的常见问题\",\n        \"description\": \"主动解答用户在决策过程中可能存在的疑问，消除顾虑，使合作流程更透明。\",\n        \"seo_keywords_themes\": [\"H2疑虑解答关键词\", \"常见问题\", \"流程透明\"],\n        \"subsections_h3\": [\n          {\n            \"title\": \"H3: 我们的合作流程是怎样的？（详细步骤）\",\n            \"description\": \"清晰、分步地解释合作或服务获取流程，降低用户未知感。\",\n            \"seo_keywords_themes\": [\"合作流程\", \"服务步骤\", \"透明化\"]\n          },\n          {\n            \"title\": \"H3: 关于[价格/投入/周期]的说明\",\n            \"description\": \"针对用户关心的成本、效益或时间等问题提供清晰解答。\",\n            \"seo_keywords_themes\": [\"价格说明\", \"投入回报\", \"常见疑问\"]\n          }\n        ]\n      },\n      {\n        \"title\": \"H2: 即刻行动：开启您的[期望目标]之旅\",\n        \"description\": \"提供清晰、直接的行动号召，引导用户迈出下一步，并简化操作路径。\",\n        \"seo_keywords_themes\": [\"H2行动号召关键词\", \"立即开始\", \"转化路径\"],\n        \"subsections_h3\": [\n          {\n            \"title\": \"H3: 现在就[具体行动，如“获取免费咨询”、“申请试用”]\",\n            \"description\": \"给出明确指令，告知用户具体可以做什么以及如何做。\",\n            \"seo_keywords_themes\": [\"行动号召关键词\", \"立即开始\", \"免费获取\"]\n          },\n          {\n            \"title\": \"H3: 联系我们/下一步指引\",\n            \"description\": \"提供便捷的联系方式或清晰的下一步操作指南。\",\n            \"seo_keywords_themes\": [\"联系方式\", \"客户支持\", \"后续步骤\"]\n          }\n        ]\n      }\n    ]\n  }\n}\n\n## 规划细节\n\n* ​H1标题​：精准覆盖目标关键词，明确用户核心利益点。\n* ​H2章节*：自然递进，引导用户从意识痛点、价值主张、服务优势，到信任构建、疑虑解决，最后明确行动路径。\n* ​H3子章节​：详细阐明产品特性、用户获益、具体步骤等；SEO关键词/主题自然融入。\n\n严格按照上述要求和结构，以提供易操作、强说服力、并优化转化的页面内容大纲。"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.6,
+      "position": [
+        1800,
+        100
+      ],
+      "id": "89604a78-0cbc-4e78-bea4-83fbfa2285c2",
+      "name": "内容大纲生成"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4b43a329-9c70-43d3-a38d-c1edcda1a028",
+              "name": "竞争者分析",
+              "value": "={{ $json.text.replace(/[\\s\\S]*<competitor_report>/, '').replace(/<\\/competitor_report>[\\s\\S]*/, '') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        380,
+        100
+      ],
+      "id": "509f3ecd-418b-4526-b611-9b0260520fa1",
+      "name": "设置参数-竞争者分析"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=<目标关键词>\n{{ $('设置参数-综合').first().json['主关键词'] }}\n</目标关键词>\n\n<竞争者信息>\n{{ $('设置参数-竞争者信息').item.json.竞争者信息 }}\n</竞争者信息>",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=# 角色：SEO和内容结构分析专家\n你是一名专精于SEO和内容结构分析的高级数据分析师，拥有丰富的搜索引擎算法理解和数据挖掘经验。你精通关键词密度分析、竞争者内容架构解析、SERP特征识别和用户意图匹配技术。你擅长运用高级爬虫工具、自然语言处理和机器学习算法提取内容模式，并将复杂的技术数据转化为可执行的内容策略建议。你的专业知识涵盖语义网络分析、内容差距识别和转化率优化，能够精准预测搜索引擎排名因素变化并制定相应的内容调整方案。\n\n## 任务：\n请提供以下数据集用于分析：\n<目标关键词>\n{目标关键词}\n</目标关键词>\n\n<竞争者信息>\n{竞争者信息}\n</竞争者信息>\n\n## 输出格式：\n使用专业、规范的中文撰写报告，确保内容层次清晰、结构严谨、逻辑分明。\n将完整报告以 markdown 格式呈现，并置于单一XML标签内：`<competitor_report>...</competitor_report>`\n报告标题层级从二级标题(##)开始，标题定为\"{{ $('设置参数-综合').first().json['主关键词'] }}竞争者分析\"\n\n## 报告结构：\n1. 竞争者编码列表：构建规范化的竞争者名称，为每个竞争者分配专属编码标识（例如 C1, C2, C3 等），并在编码标识后附加其完整品牌名称。示例：\"C1（肯德基），C2（麦当劳），C3（德克士）\"。此编码体系将用于报告后续内容中的高效参考，务必确保每次提及竞争者时均包含完整的编码标识与品牌全称。\n\n2. Meta标题和描述趋势：提取Meta标题与描述中的高频关键词、内容定位策略（如价值导向型、地域聚焦型、效率强调型）以及转化率优化元素，包括行动召唤语与吸引力表达。\n\n3. 常见大纲部分/主题：基于H2/H3标题结构，识别竞争者页面中重复出现的核心板块（如\"概念定义\"、\"服务流程\"、\"价格方案\"、\"差异化优势\"、\"常见问题解答\"及特定领域专业模块）。\n\n4. 关键词组合模式（N-gram分析）：通过自然语言处理技术，提取并量化竞争者标题中最具显著性的二元、三元及四元词组，重点标记那些对主题相关性与搜索意图匹配具有决定性影响的语义单元。\n\n5. 页面结构与用户体验要素：系统化记录内容组织逻辑（如信息呈现顺序与层级关系）、功能性元素应用（如列表呈现、数据表格、多媒体内容、互动表单、计算工具）以及内容深度与篇幅策略分析。\n\n6. 竞争者总结与差异化分析：系统性评估每个竞争者的市场定位策略、核心竞争优势、内容差异化方向以及目标受众细分策略。"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.6,
+      "position": [
+        0,
+        0
+      ],
+      "id": "f2b77862-ce4e-4be1-ad3c-dd251f48e720",
+      "name": "竞争者分析"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b2fec12a-5433-4442-a2a4-d7578bd8ed3e",
+              "name": "竞争者信息",
+              "value": "={{ $json.competitors_data }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -220,
+        100
+      ],
+      "id": "37c0bcab-1da9-46b0-a399-1b579ec7f0b0",
+      "name": "设置参数-竞争者信息"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4b43a329-9c70-43d3-a38d-c1edcda1a028",
+              "name": "=竞争者信息",
+              "value": "={{ $('设置参数-竞争者信息').item.json['竞争者信息'] }}",
+              "type": "string"
+            },
+            {
+              "id": "16598a55-52a6-4f9d-8d80-3d00b6803392",
+              "name": "竞争者分析",
+              "value": "={{ $('设置参数-竞争者分析').item.json['竞争者分析'] }}",
+              "type": "string"
+            },
+            {
+              "id": "a9c6b916-28de-4506-8b13-2ea220118118",
+              "name": "用户意图分析",
+              "value": "={{ $('设置参数-用户意图分析').item.json['用户意图分析'] }}",
+              "type": "string"
+            },
+            {
+              "id": "e37c68b4-29e5-4c15-975a-566c1468179b",
+              "name": "机会识别与洞察分析",
+              "value": "={{ $('设置参数-机会识别与洞察分析').item.json['机会识别与洞察分析'] }}",
+              "type": "string"
+            },
+            {
+              "id": "e97b0399-7ffb-4130-a698-b47e2ce0e99c",
+              "name": "内容大纲",
+              "value": "={{ $('设置参数-内容大纲').item.json['内容大纲'] }}",
+              "type": "string"
+            },
+            {
+              "id": "072b9d86-04f8-40b2-852b-7272b50b644b",
+              "name": "完整 SEO 报告网址",
+              "value": "={{ $('发布').item.json.result.content[0].text }}",
+              "type": "string"
+            },
+            {
+              "id": "10a31b0c-8477-472d-bd15-728c2c37aa7c",
+              "name": "SEO 分析报告",
+              "value": "={{ $('设置参数-组合').item.json.SEO }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3720,
+        100
+      ],
+      "id": "ff0747b4-1681-42cf-b07a-df982b4920a6",
+      "name": "设置参数-汇总",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4b43a329-9c70-43d3-a38d-c1edcda1a028",
+              "name": "内容大纲",
+              "value": "={{ $json.text.replace(/[\\s\\S]*```json/, '').replace(/```[\\s\\S]*/, '').trim() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2180,
+        100
+      ],
+      "id": "436fac67-c110-4363-9fca-2cfbbe9c19ac",
+      "name": "设置参数-内容大纲"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=<目标关键词>\n{{ $('设置参数-综合').first().json['主关键词'] }}\n</目标关键词>\n\n<竞争者分析>\n{{ $('设置参数-竞争者分析').item.json['竞争者分析'] }}\n</竞争者分析>\n\n<用户意图分析>\n{{ $('设置参数-用户意图分析').item.json['用户意图分析'] }}\n</用户意图分析>",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "= # 角色：SEO 内容策略与用户体验（UX）专家\n你是一位资深的 SEO 内容策略与用户体验（UX）专家，具备搜索引擎优化专业知识、内容差异化分析能力、用户体验设计专长和数据驱动决策能力。你擅长识别市场空白，整合复杂数据源，并将分析转化为可执行的内容策略。\n\n## 任务目标：\n请提供以下数据集用于分析：\n<目标关键词>\n{目标关键词}\n</目标关键词>\n\n<竞争者分析>\n{竞争者分析}\n</竞争者分析>\n\n<用户意图分析>\n{用户意图分析}\n</用户意图分析>\n\n## 输出格式：\n使用专业、规范的中文撰写报告，确保内容层次清晰、结构严谨、逻辑分明。\n将完整报告以 markdown 格式呈现，并置于单一XML标签内：`<opportunity_analysis>...</opportunity_analysis>`\n报告标题层级从二级标题(##)开始，标题定为\"{{ $('设置参数-综合').first().json['主关键词'] }}机会识别与洞察分析\"\n\n## 报告结构：\n1. 内容基石分析：依据用户意图分析与竞争者分析，识别用户期望且竞品普遍覆盖的核心主题、版块与信息点，从而定义构成内容策略基础的“行业标配”元素，并以此作为后续差异化策略的基准。\n2. 内容与体验优化机会：挖掘用户意图（显/隐性需求），对比竞争者分析找出其未能有效满足或忽略的关键领域，进而阐述如何通过差异化内容或卓越UX填补“价值创新缺口”，以构建独特竞争优势。\n3. SEO核心要素优先级：整合竞争者标题N-gram分析与用户意图分析，提炼并排序对提升内容相关性、权威性及排名至关重要的关键词、概念与语义集群，进而制定SEO内容优先级，指导页面架构与核心内容创作，以高效占领并巩固搜索生态位。\n4. 用户体验与转化提升策略 ：综合分析并诊断竞争者在内容呈现、信息架构、导航及CTA等方面的UX瓶颈与不足，随后提出具体、创新的UX优化策略，以提升用户满意度、参与度与转化效果，力求构建超越竞品的持久互动优势。"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.6,
+      "position": [
+        1200,
+        100
+      ],
+      "id": "c674f476-5d3e-456d-8c46-4f5e7f8f13da",
+      "name": "机会识别与洞察分析"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        -1540,
+        360
+      ],
+      "id": "3f377abd-aabc-43f9-b152-8628fbcb82c2",
+      "name": "聚合分支"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        3500,
+        100
+      ],
+      "id": "37befdb9-c049-4c91-b0c2-25ae98739dfe",
+      "name": "聚合条目"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "fb5ceb74-29fe-4d58-ace9-647a117193ee",
+              "leftValue": "={{ $('设置参数-综合').first().json['分支'] }}",
+              "rightValue": "表格",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3060,
+        100
+      ],
+      "id": "38670d0e-02db-4013-8c70-b817c8acedd2",
+      "name": "判断"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://mcp-on-edge.edgeone.site/mcp-server",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"deploy-html\",          \n    \"arguments\": {                  \n      \"value\": \"{{ JSON.stringify($node['转化为 HTML'].json.HTML).slice(1, -1) }}\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2840,
+        100
+      ],
+      "id": "aa243fa0-d852-4137-ac47-b5aad6d92b71",
+      "name": "发布"
+    },
+    {
+      "parameters": {
+        "mode": "markdownToHtml",
+        "markdown": "={{ $json.SEO }}",
+        "destinationKey": "HTML",
+        "options": {
+          "completeHTMLDocument": true
+        }
+      },
+      "type": "n8n-nodes-base.markdown",
+      "typeVersion": 1,
+      "position": [
+        2620,
+        100
+      ],
+      "id": "52007d8e-8b99-4394-b28a-c3f9dc700057",
+      "name": "转化为 HTML"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4b43a329-9c70-43d3-a38d-c1edcda1a028",
+              "name": "=SEO",
+              "value": "=# {{ $('设置参数-综合').first().json['主关键词'] }} SEO 分析报告\n\n本报告聚焦关键词{{ $('设置参数-综合').first().json['主关键词'] }}，面向{{ $('设置参数-综合').first().json['公司品牌'] }}提供系统化的SEO深度分析，涵盖如下几个部分：\n\t1.\t竞争者信息\n\t2.\t竞争分析\n\t3.\t用户意图分析\n\t4.\t机会识别与洞察分析\n\t5.\t内容大纲\n旨在精准覆盖{{ $('设置参数-综合').first().json['目标用户'] }} 的需求并实现如下目标：\n{{ $('设置参数-综合').first().json['公司介绍'] }}\n\n{{ $('设置参数-竞争者分析').item.json['竞争者分析'] }}\n\n{{ $('设置参数-用户意图分析').item.json['用户意图分析'] }}\n\n{{ $('设置参数-机会识别与洞察分析').item.json['机会识别与洞察分析'] }}\n\n## 内容大纲\n```\n{{ $('设置参数-内容大纲').item.json['内容大纲'] }}\n```\n\n## 竞争者信息\n```\n{{ $('设置参数-竞争者信息').item.json['竞争者信息'] }}\n```",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2400,
+        100
+      ],
+      "id": "ab5765dd-428c-4840-b4e4-86fbe3edc3e3",
+      "name": "设置参数-组合"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-06-17T06:27:19.000Z",
+  "versionId": "87be08e8-0be7-4619-8a26-d5b535519b81"
+}
